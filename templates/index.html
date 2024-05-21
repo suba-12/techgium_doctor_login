@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- coding by helpme_coder -->
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dotor Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/with.css') }}" />
+    <script>
+        function showAlert() {
+            alert("{{ error }}");
+        }
+
+        {% if show_alert %}
+        window.onload = showAlert;
+        {% endif %}
+    </script>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="container" >
+            <form action="/signin" method="POST">
+                <h2>Login-form</h2>
+                <div class="input-field">
+                    <input type="text" id="doctor_id" name="doctor_id" required />
+                    <label for=doctor_id>Enter Docter ID</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="password" name="password" required />
+                    <label for="password">Enter password</label>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
